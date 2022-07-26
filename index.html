@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Superscape Visualiser</title>
+        <script src="emu/emulators.js"></script>
+        <script src="emu/emulators-ui.js"></script>
+        <link rel="stylesheet" href="emu/emulators-ui.css">
+        <style>
+            :root {
+                background-color: #000;
+            }
+            #vis {
+                width: 640px;
+                height: 480px;
+                margin: 0 auto;
+                cursor: none;
+            }
+            .emulator-root > .emulator-mouse-overlay > .emulator-options,
+            .emulator-root > .emulator-loading {
+                display: none;
+            }
+        </style>
+    </head>
+    <body>
+        <div id="vis"></div>
+        <script>
+            emulators.pathPrefix = 'emu/';
+            Dos(document.querySelector('#vis')).run('vis.zip');
+        </script>
+    </body>
+</html>
